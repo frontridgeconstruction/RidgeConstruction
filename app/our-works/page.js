@@ -3,7 +3,7 @@
 import {motion} from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, Suspense} from 'react'
 import {useSearchParams} from 'next/navigation'
 
 const WORKS = [
@@ -63,7 +63,7 @@ const CATEGORIES = [
 	{id: 'Salons & Spa', label: 'Salons & Spa'},
 ]
 
-export default function OurWorksPage() {
+function OurWorksContent() {
 	const searchParams = useSearchParams()
 	const categoryFromUrl = searchParams.get('category')
 
@@ -261,5 +261,28 @@ export default function OurWorksPage() {
 				))}
 			</div>
 		</div>
+	)
+}
+
+export default function OurWorksPage() {
+	return (
+		<Suspense
+			fallback={
+				<div className='min-h-screen bg-background flex items-center justify-center py-20 px-4'>
+					<div className='text-center'>
+						<div className='relative inline-block'>
+							<div className='animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-accent'></div>
+							<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+								<div className='w-8 h-8 bg-accent/20 rounded-full animate-pulse'></div>
+							</div>
+						</div>
+						<p className='mt-6 text-lg text-muted-foreground font-medium'>
+							Loading our works...
+						</p>
+					</div>
+				</div>
+			}>
+			<OurWorksContent />
+		</Suspense>
 	)
 }
