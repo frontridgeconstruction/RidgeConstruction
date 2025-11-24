@@ -11,8 +11,15 @@ const WORKS = [
 		title: 'Secret Kitchen',
 		category: 'Restaurants',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763632146/works/title/uzbg57hamqbjrsizgquv.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968933/70S_4601-2-HDR_ltvxps.jpg',
 		folder: 'secret-kitchen',
+	},
+	{
+		title: 'Burger King',
+		category: 'Restaurants',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968818/70S_6873-min_oh0j2t.jpg',
+		folder: 'burger-king',
 	},
 	{
 		title: 'Shelbys',
@@ -25,7 +32,7 @@ const WORKS = [
 		title: 'Mabelle Dental',
 		category: 'Healthcare',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763622599/works/title/ys6dc8hlj68y1c7e1wsz.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969055/70S_5283-min_mdyh7c.jpg',
 		folder: 'mabelle-dental',
 	},
 	{
@@ -41,7 +48,7 @@ const WORKS = [
 		description:
 			'Modern fast-food restaurant with high-traffic layout and efficient workflows. Superior design for quick service and customer satisfaction.',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763493501/works/title/jkqhentb42rhbmbk1cro.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969075/70S_5001-min_tcb2zr.jpg',
 		folder: 'dough-box',
 	},
 	{
@@ -66,7 +73,8 @@ const WORKS = [
 	{
 		title: 'Holy Poly Cow',
 		category: 'Restaurants',
-		image: '',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969081/RollyPollyCowBrampton-4285-scaled_clsznw.webp',
 		folder: 'holy-poly-cow',
 	},
 	{
@@ -84,7 +92,8 @@ const WORKS = [
 	{
 		title: 'Thai Express',
 		category: 'Restaurants',
-		image: '',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968870/Screenshot_20250602-212820_Fiverr_u1suky.jpg',
 		folder: 'thai-express',
 	},
 ]
