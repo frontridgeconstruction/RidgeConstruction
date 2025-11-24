@@ -51,7 +51,6 @@ export default function ContactPage() {
 		setShowSuccess(false)
 
 		try {
-			// Send directly to Web3Forms - no backend needed
 			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
 				headers: {
@@ -59,9 +58,7 @@ export default function ContactPage() {
 					Accept: 'application/json',
 				},
 				body: JSON.stringify({
-					access_key:
-						process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
-						'YOUR_WEB3FORMS_ACCESS_KEY',
+					access_key: process.env.WEB3FORMS_KEY,
 					name: formData.fullName,
 					email: formData.email,
 					phone: formData.phone || 'Not provided',
@@ -77,7 +74,6 @@ export default function ContactPage() {
 				throw new Error(data.message || 'Failed to send message')
 			}
 
-			// Success
 			setShowSuccess(true)
 			setFormData({
 				fullName: '',
