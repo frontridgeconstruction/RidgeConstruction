@@ -6,7 +6,13 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'res.cloudinary.com',
 			},
+			{
+				protocol: 'https',
+				hostname: 'images.unsplash.com',
+			},
 		],
+		// Disable Next.js image optimization - use Cloudinary's optimization instead
+		unoptimized: true,
 	},
 	reactCompiler: true,
 }

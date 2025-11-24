@@ -19,8 +19,8 @@ const jost = Jost({
 })
 
 export const metadata = {
-	title: 'Ridge Constructions',
-	description: 'Building your dreams with precision and care.',
+	title: 'FrontRidge',
+	description: 'Building the Future, Turning Vision into Reality.',
 	icons: {
 		icon: '/fav.png',
 		shortcut: '/fav.png',

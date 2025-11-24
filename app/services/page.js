@@ -62,13 +62,26 @@ function ServiceCard({service, index}) {
 	const cardRef = useRef(null)
 	const isInView = useInView(cardRef, {once: true, margin: '-100px'})
 
-	return (
+	// Map service categories to our-works categories
+	const getCategoryParam = (category) => {
+		const categoryMap = {
+			Restaurants: 'Restaurants',
+			Healthcare: 'Healthcare',
+			'Corporate Offices': 'Corporate Offices',
+		}
+		return categoryMap[category] || null
+	}
+
+	const categoryParam = getCategoryParam(service.category)
+	const shouldLink = categoryParam !== null
+
+	const cardContent = (
 		<motion.div
 			ref={cardRef}
 			initial={{opacity: 0, y: 50}}
 			animate={isInView ? {opacity: 1, y: 0} : {opacity: 0, y: 50}}
 			transition={{duration: 0.6, delay: index * 0.1}}
-			className='group relative overflow-hidden bg-card border border-border hover:border-accent transition-all duration-500'>
+			className={`group relative overflow-hidden bg-card border border-border hover:border-accent transition-all duration-500 ${shouldLink ? 'cursor-pointer' : ''}`}>
 			<div className='relative h-64 overflow-hidden'>
 				<div
 					className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110'
@@ -122,6 +135,14 @@ function ServiceCard({service, index}) {
 			<div className='absolute bottom-0 right-0 h-20 w-20 border-b-4 border-r-4 border-accent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
 		</motion.div>
 	)
+
+	return shouldLink ? (
+		<Link href={`/our-works?category=${encodeURIComponent(categoryParam)}`}>
+			{cardContent}
+		</Link>
+	) : (
+		cardContent
+	)
 }
 
 export default function ServicesPage() {
@@ -174,7 +195,7 @@ export default function ServicesPage() {
 			image:
 				'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
 		},
-	
+
 		{
 			icon: Hammer,
 			category: 'Commercial',
@@ -255,7 +276,7 @@ export default function ServicesPage() {
 			image:
 				'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
 		},
-			{
+		{
 			icon: Building2,
 			category: 'Residential',
 			title: 'Custom Home Construction',
@@ -270,39 +291,45 @@ export default function ServicesPage() {
 			],
 			image:
 				'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-		}
+		},
 	]
 
 	return (
 		<div className='min-h-screen bg-background'>
-<section className='relative flex items-center justify-center overflow-hidden py-20 sm:py-24 md:py-28'>
-  <div
-    className='absolute inset-0 bg-cover bg-center'
-    style={{
-      backgroundImage: "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80')",
-      filter: 'brightness(0.4)',
-    }}
-  />
-  <div className='absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black dark:from-black/70 dark:via-black/50 dark:to-black' />
+			<section className='relative flex items-center justify-center overflow-hidden py-20 sm:py-24 md:py-28'>
+				<div
+					className='absolute inset-0 bg-cover bg-center'
+					style={{
+						backgroundImage:
+							"url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80')",
+						filter: 'brightness(0.4)',
+					}}
+				/>
+				<div className='absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black dark:from-black/70 dark:via-black/50 dark:to-black' />
 
-  <div className='relative z-10 px-4 text-center max-w-5xl mx-auto'>
-    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className='space-y-6 sm:space-y-8'>
-      <span className='inline-block border border-accent px-4 sm:px-6 py-2 sm:py-3 text-xs font-bold uppercase tracking-widest text-accent'>
-        Our Services
-      </span>
+				<div className='relative z-10 px-4 text-center max-w-5xl mx-auto'>
+					<motion.div
+						initial={{opacity: 0, y: 30}}
+						animate={{opacity: 1, y: 0}}
+						transition={{duration: 0.8}}
+						className='space-y-6 sm:space-y-8'>
+						<span className='inline-block border border-accent px-4 sm:px-6 py-2 sm:py-3 text-xs font-bold uppercase tracking-widest text-accent'>
+							Our Services
+						</span>
 
-      <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-always-white'>
-        Building Excellence
-        <br />
-        <span className='text-accent'>Across Every Sector</span>
-      </h1>
+						<h1 className='text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-always-white'>
+							Building Excellence
+							<br />
+							<span className='text-accent'>Across Every Sector</span>
+						</h1>
 
-      <p className='mx-auto max-w-3xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground'>
-        From residential masterpieces to commercial landmarks, we deliver construction solutions that stand the test of time.
-      </p>
-    </motion.div>
-  </div>
-</section>
+						<p className='mx-auto max-w-3xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground'>
+							From residential masterpieces to commercial landmarks, we deliver
+							construction solutions that stand the test of time.
+						</p>
+					</motion.div>
+				</div>
+			</section>
 
 			<section className='py-16 sm:py-24 px-4 bg-card'>
 				<div className='mx-auto max-w-7xl'>
