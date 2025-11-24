@@ -379,12 +379,14 @@ export default function ServicesPage() {
 							expertise and commitment to excellence.
 						</p>
 						<div className='flex flex-col justify-center gap-3 sm:gap-4 sm:flex-row'>
-							<motion.button
-								className='bg-accent px-8 sm:px-10 py-3 sm:py-4 font-bold uppercase tracking-wider text-accent-foreground transition-colors duration-300 hover:bg-accent/90'
-								whileHover={{scale: 1.05}}
-								whileTap={{scale: 0.98}}>
-								<Link href='/contact'>Schedule Consultation</Link>
-							</motion.button>
+							<Link href='/contact'>
+								<motion.button
+									className='bg-accent cursor-pointer px-8 sm:px-10 py-3 sm:py-4 font-bold uppercase tracking-wider text-accent-foreground transition-colors duration-300 hover:bg-accent/90'
+									whileHover={{scale: 1.05}}
+									whileTap={{scale: 0.98}}>
+									Schedule Consultation
+								</motion.button>
+							</Link>
 							<motion.button
 								className='cursor-pointer border-2 border-foreground px-8 sm:px-10 py-3 sm:py-4 font-bold uppercase tracking-wider text-foreground transition-all duration-300 hover:bg-foreground hover:text-background'
 								whileHover={{scale: 1.05}}

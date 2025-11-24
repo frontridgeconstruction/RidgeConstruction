@@ -55,19 +55,22 @@ const WORKS = [
 		title: 'Brush Strokes',
 		category: 'Salons & Spa',
 		description: '',
-		image: 'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968866/BrushStrokes-08289-scaled_ufoj09.webp',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968866/BrushStrokes-08289-scaled_ufoj09.webp',
 		folder: 'brush-strokes',
 	},
 	{
 		title: 'Burrito Boyz',
 		category: 'Restaurants',
-		image: 'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969089/BurritoBoysEllesmere-08152-1-scaled_grjoek.jpg',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969089/BurritoBoysEllesmere-08152-1-scaled_grjoek.jpg',
 		folder: 'burrito-boyz',
 	},
 	{
 		title: 'Churchs Chicken',
 		category: 'Restaurants',
-		image: '',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969089/BurritoBoysEllesmere-08152-1-scaled_grjoek.jpg',
 		folder: 'churchs-chicken',
 	},
 	{
@@ -80,13 +83,15 @@ const WORKS = [
 	{
 		title: 'Holy Shakes',
 		category: 'Restaurants',
-		image: 'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969086/ShakesKathiRoll-00108-2-scaled_ua9yxn.webp',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969086/ShakesKathiRoll-00108-2-scaled_ua9yxn.webp',
 		folder: 'holy-shakes',
 	},
 	{
 		title: 'New York Sliders',
 		category: 'Restaurants',
-		image: 'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968867/Screenshot_20240724-154257_Fiverr_we6s5b.jpg',
+		image:
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763968867/Screenshot_20240724-154257_Fiverr_we6s5b.jpg',
 		folder: 'new-york-sliders',
 	},
 	{
