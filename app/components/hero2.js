@@ -54,7 +54,7 @@ export default function ConstructionHero() {
 				transition={{duration: 1.8, ease: 'easeOut'}}
 				className='absolute inset-0'>
 				<Image
-					src='/bg.jpg'
+					src='https://res.cloudinary.com/diga1onyl/image/upload/v1763968918/bg_yzmhdh.jpg'
 					alt='Construction site at golden hour'
 					fill
 					priority

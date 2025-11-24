@@ -25,7 +25,6 @@ export default function ContactPage() {
 	const handleSubmit = async (e) => {
 		e?.preventDefault()
 
-		// Validate form
 		if (
 			!formData.fullName.trim() ||
 			!formData.email.trim() ||
@@ -37,7 +36,6 @@ export default function ContactPage() {
 			return
 		}
 
-		// Validate email format
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 		if (!emailRegex.test(formData.email)) {
 			setErrorMessage('Please enter a valid email address')
@@ -100,7 +98,6 @@ export default function ContactPage() {
 	return (
 		<div className='min-h-screen bg-background py-16 px-4 sm:py-20 sm:px-6 lg:px-8'>
 			<div className='max-w-7xl mx-auto'>
-				{/* Header */}
 				<motion.div
 					initial={{opacity: 0, y: 20}}
 					animate={{opacity: 1, y: 0}}
@@ -116,7 +113,6 @@ export default function ContactPage() {
 				</motion.div>
 
 				<div className='grid lg:grid-cols-2 gap-10 lg:gap-16'>
-					{/* Left Column - Contact Info */}
 					<motion.div
 						initial={{opacity: 0, x: -40}}
 						animate={{opacity: 1, x: 0}}
@@ -134,7 +130,6 @@ export default function ContactPage() {
 						</div>
 
 						<div className='space-y-7'>
-							{/* Phone */}
 							<motion.div
 								initial={{opacity: 0, y: 20}}
 								animate={{opacity: 1, y: 0}}
@@ -165,7 +160,6 @@ export default function ContactPage() {
 								</div>
 							</motion.div>
 
-							{/* Email */}
 							<motion.div
 								initial={{opacity: 0, y: 20}}
 								animate={{opacity: 1, y: 0}}
@@ -198,7 +192,6 @@ export default function ContactPage() {
 								</div>
 							</motion.div>
 
-							{/* Address */}
 							<motion.div
 								initial={{opacity: 0, y: 20}}
 								animate={{opacity: 1, y: 0}}
@@ -239,7 +232,6 @@ export default function ContactPage() {
 						</div>
 					</motion.div>
 
-					{/* Right Column - Form */}
 					<motion.div
 						initial={{opacity: 0, x: 40}}
 						animate={{opacity: 1, x: 0}}

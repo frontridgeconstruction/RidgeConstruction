@@ -62,7 +62,6 @@ function ServiceCard({service, index}) {
 	const cardRef = useRef(null)
 	const isInView = useInView(cardRef, {once: true, margin: '-100px'})
 
-	// Map service categories to our-works categories
 	const getCategoryParam = (category) => {
 		const categoryMap = {
 			Restaurants: 'Restaurants',
