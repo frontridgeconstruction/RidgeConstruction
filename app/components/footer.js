@@ -31,7 +31,7 @@ export default function Footer() {
 	return (
 		<footer
 			id='footer'
-			className='bg-black border-t border-[color:var(--border-color)]'>
+			className='bg-black border-t border-(--border-color)'>
 			<div className='px-4 sm:px-6 lg:px-8 py-2 sm:py-16 lg:py-20'>
 				<div className='max-w-7xl mx-auto'>
 					<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12 lg:mb-16'>
@@ -44,7 +44,7 @@ export default function Footer() {
 									alt='Front Ridge Logo'
 									width={140}
 									height={140}
-									className='rounded-md sm:w-[160px] sm:h-[160px] transition-opacity duration-300'
+									className='rounded-md sm:w-40 sm:h-40 transition-opacity duration-300'
 								/>
 							</Link>
 							<p className='text-gray-400 text-sm leading-relaxed -mt-10 sm:-mt-16'>
@@ -52,7 +52,6 @@ export default function Footer() {
 								professional expertise.
 							</p>
 						</div>
-
 						<div className='animate-fade-in-up animation-delay-1'>
 							<h4 className='text-white font-bold mb-4 sm:mb-6 text-base sm:text-lg'>
 								Quick Links
@@ -62,36 +61,34 @@ export default function Footer() {
 									<li key={link.name}>
 										<Link
 											href={link.href}
-											className='text-gray-400 hover:text-[color:var(--accent)] transition-colors text-sm'>
+											className='text-gray-400 hover:text-accent transition-colors text-sm'>
 											{link.name}
 										</Link>
 									</li>
 								))}
 							</ul>
 						</div>
-
 						<div className='animate-fade-in-up animation-delay-2'>
 							<h4 className='text-white font-bold mb-4 sm:mb-6 text-base sm:text-lg'>
 								Services
 							</h4>
 							<ul className='space-y-2 sm:space-y-3'>
 								{[
-									'Restaurant',
-									'Healthcare',
-									'Corporate Offices',
-									'Salons & Spa',
+									{name: 'Restaurant', category: 'Restaurants'},
+									{name: 'Healthcare', category: 'Healthcare'},
+									{name: 'Corporate Offices', category: 'Corporate Offices'},
+									{name: 'Salons & Spa', category: 'Salons & Spa'},
 								].map((service) => (
-									<li key={service}>
-										<a
-											href='/'
-											className='text-gray-400 hover:text-[color:var(--accent)] transition-colors text-sm'>
-											{service}
-										</a>
+									<li key={service.name}>
+										<Link
+											href={`/our-works?category=${encodeURIComponent(service.category)}`}
+											className='text-gray-400 hover:text-accent transition-colors text-sm'>
+											{service.name}
+										</Link>
 									</li>
 								))}
 							</ul>
-						</div>
-
+						</div>{' '}
 						<div className='animate-fade-in-up animation-delay-3'>
 							<h4 className='text-white font-bold mb-4 sm:mb-6 text-base sm:text-lg'>
 								Contact
@@ -104,7 +101,7 @@ export default function Footer() {
 						</div>
 					</div>
 
-					<div className='border-t border-[color:var(--border-color)] pt-6 sm:pt-8'>
+					<div className='border-t border-(--border-color) pt-6 sm:pt-8'>
 						<div className='flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400'>
 							<p className='text-center md:text-left'>
 								© {currentYear} Front Ridge Construction. All rights reserved.
@@ -112,12 +109,12 @@ export default function Footer() {
 							<div className='flex gap-4 sm:gap-6'>
 								<a
 									href='#'
-									className='hover:text-[color:var(--accent)] transition-colors'>
+									className='hover:text-accent transition-colors'>
 									Privacy Policy
 								</a>
 								<a
 									href='#'
-									className='hover:text-[color:var(--accent)] transition-colors'>
+									className='hover:text-accent transition-colors'>
 									Terms of Service
 								</a>
 							</div>

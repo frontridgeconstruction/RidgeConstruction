@@ -37,23 +37,44 @@ export default function ContactPage() {
 			return
 		}
 
+		// Validate email format
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+		if (!emailRegex.test(formData.email)) {
+			setErrorMessage('Please enter a valid email address')
+			setShowError(true)
+			setTimeout(() => setShowError(false), 5000)
+			return
+		}
+
 		setIsSubmitting(true)
 		setShowError(false)
 		setShowSuccess(false)
 
 		try {
-			const response = await fetch('/api/contact', {
+			// Send directly to Web3Forms - no backend needed
+			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
+					Accept: 'application/json',
 				},
-				body: JSON.stringify(formData),
+				body: JSON.stringify({
+					access_key:
+						process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
+						'YOUR_WEB3FORMS_ACCESS_KEY',
+					name: formData.fullName,
+					email: formData.email,
+					phone: formData.phone || 'Not provided',
+					message: formData.message,
+					subject: `New Contact Form Submission from ${formData.fullName}`,
+					from_name: 'Front Ridge Construction Website',
+				}),
 			})
 
 			const data = await response.json()
 
-			if (!response.ok) {
-				throw new Error(data.error || 'Failed to send message')
+			if (!response.ok || !data.success) {
+				throw new Error(data.message || 'Failed to send message')
 			}
 
 			// Success
