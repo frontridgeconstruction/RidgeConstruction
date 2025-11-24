@@ -10,7 +10,8 @@ export default function ChurchsChickenPage() {
 		<ProjectDetail
 			title='Churchs Chicken'
 			description=''
-			hero='https://res.cloudinary.com/diga1onyl/image/upload/w_2000,q_auto,f_auto,c_fill/v1764007542/Churchs-Chicken-HF-4217-scaled_rsawmr.webp'
+			hero=
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_2000,q_auto,f_auto,c_fill/v1764007542/Churchs-Chicken-HF-4217-scaled_rsawmr.webp'
 			gallery={[
 				'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1764007542/Churchs-Chicken-HF-124729-scaled_uqdwxl.webp',
 				'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1764007541/Churchs-Chicken-HF-4221-scaled_str1bx.webp',

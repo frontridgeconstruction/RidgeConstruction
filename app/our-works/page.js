@@ -70,7 +70,7 @@ const WORKS = [
 		title: 'Churchs Chicken',
 		category: 'Restaurants',
 		image:
-			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1763969089/BurritoBoysEllesmere-08152-1-scaled_grjoek.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1200,q_auto,f_auto,c_fill/v1764007542/Churchs-Chicken-HF-4217-scaled_rsawmr.webp',
 		folder: 'churchs-chicken',
 	},
 	{
