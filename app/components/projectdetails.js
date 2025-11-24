@@ -103,9 +103,9 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 		<>
 			{lightboxOpen && (
 				<div
-					className='fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center'
+					className='fixed inset-0 z-100 bg-black/95 backdrop-blur-sm flex items-center justify-center'
 					onClick={closeLightbox}>
-					<button className='absolute top-4 right-4 z-[110] cursor-pointer text-always-white p-2 rounded-full bg-white/50 hover:bg-black/70 transition-all duration-200 group'>
+					<button className='absolute top-4 right-4 z-110 cursor-pointer text-always-white p-2 rounded-full bg-white/50 hover:bg-black/70 transition-all duration-200 group'>
 						<svg
 							className='w-8 h-8'
 							fill='none'
@@ -120,7 +120,7 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 						</svg>
 					</button>
 
-					<div className='absolute top-4 left-1/2 transform -translate-x-1/2 z-[110] bg-black/50 px-4 py-2 rounded-full backdrop-blur-md'>
+					<div className='absolute top-4 left-1/2 transform -translate-x-1/2 z-110 bg-black/50 px-4 py-2 rounded-full backdrop-blur-md'>
 						<p className='text-white font-medium'>
 							{currentIndex + 1} / {gallery.length}
 						</p>
@@ -140,7 +140,7 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 										e.stopPropagation()
 										goPrev()
 									}}
-									className='absolute left-4 z-[110] text-always-white cursor-pointer p-3 rounded-full bg-white/50 hover:bg-accent transition-colors duration-200'>
+									className='absolute left-4 z-110 text-always-white cursor-pointer p-3 rounded-full bg-white/50 hover:bg-accent transition-colors duration-200'>
 									<svg
 										className='w-6 h-6'
 										fill='none'
@@ -159,7 +159,7 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 										e.stopPropagation()
 										goNext()
 									}}
-									className='absolute right-4 z-[110] text-always-white cursor-pointer p-3 rounded-full bg-white/50 hover:bg-accent transition-colors duration-200'>
+									className='absolute right-4 z-110 text-always-white cursor-pointer p-3 rounded-full bg-white/50 hover:bg-accent transition-colors duration-200'>
 									<svg
 										className='w-6 h-6'
 										fill='none'
@@ -190,7 +190,7 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 					</div>
 
 					{gallery.length > 1 && (
-						<div className='absolute bottom-6 left-1/2 transform -translate-x-1/2 z-[110] w-full max-w-5xl px-4'>
+						<div className='absolute bottom-6 left-1/2 transform -translate-x-1/2 z-110 w-full max-w-5xl px-4'>
 							<div className='bg-black/60 backdrop-blur-md rounded-xl p-3 shadow-2xl'>
 								<div
 									ref={containerRef}
