@@ -45,13 +45,47 @@ const WORKS = [
 		folder: 'dough-box',
 	},
 	{
-		title: 'Burger King',
+		title: 'Brush Strokes',
+		category: 'Salons & Spa',
+		description: '',
+		image: '',
+		folder: 'brush-strokes',
+	},
+	{
+		title: 'Burrito Boyz',
 		category: 'Restaurants',
-		description:
-			'A fast-food style restaurant built with a modern, high-traffic layout, durable materials, and efficient kitchen workflows.',
-		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763491433/works/title/jpv3sae10gpugz4vqwup.jpg',
-		folder: 'burger-king',
+		image: '',
+		folder: 'burrito-boyz',
+	},
+	{
+		title: 'Churchs Chicken',
+		category: 'Restaurants',
+		image: '',
+		folder: 'churchs-chicken',
+	},
+	{
+		title: 'Holy Poly Cow',
+		category: 'Restaurants',
+		image: '',
+		folder: 'holy-poly-cow',
+	},
+	{
+		title: 'Holy Shakes',
+		category: 'Restaurants',
+		image: '',
+		folder: 'holy-shakes',
+	},
+	{
+		title: 'New York Sliders',
+		category: 'Restaurants',
+		image: '',
+		folder: 'new-york-sliders',
+	},
+	{
+		title: 'Thai Express',
+		category: 'Restaurants',
+		image: '',
+		folder: 'thai-express',
 	},
 ]
 
