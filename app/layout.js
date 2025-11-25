@@ -22,7 +22,7 @@ const jost = Jost({
 export const metadata = {
 	title: {
 		default:
-			'Front Ridge Construction | Premier Construction Services in Canada',
+			'Front Ridge Construction | Premium Construction Services in Canada',
 		template: '%s | Front Ridge Construction',
 	},
 	description:
@@ -54,7 +54,7 @@ export const metadata = {
 		canonical: '/',
 	},
 	openGraph: {
-		title: 'Front Ridge Construction | Premier Construction Services in Canada',
+		title: 'Front Ridge Construction | Premium Construction Services in Canada',
 		description:
 			'Leading construction company in Canada specializing in restaurants, healthcare facilities, corporate offices, and commercial buildings.',
 		url: 'https://frontridge.ca',
@@ -72,7 +72,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Front Ridge Construction | Premier Construction Services in Canada',
+		title: 'Front Ridge Construction | Premium Construction Service in Canada',
 		description:
 			'Leading construction company in Canada specializing in restaurants, healthcare facilities, and commercial buildings.',
 		images: ['/og-image.jpg'],
