@@ -118,7 +118,7 @@ export default function AboutPage() {
 					className='absolute inset-0 bg-cover bg-center'
 					style={{
 						backgroundImage:
-							"url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80')",
+							"url('https://res.cloudinary.com/diga1onyl/image/upload/w_1600,q_auto,f_auto,c_fill/v1763969062/70S_4879-min_bgidnb.jpg')",
 						filter: 'brightness(0.4)',
 					}}
 				/>
