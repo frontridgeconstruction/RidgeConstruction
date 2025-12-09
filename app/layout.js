@@ -6,17 +6,20 @@ import {jsonLdOrganization, jsonLdLocalBusiness, jsonLdWebsite} from '@/lib/seo'
 const geistSans = Geist({
 	variable: '--font-geist-sans',
 	subsets: ['latin'],
+	display: 'swap',
 })
 
 const geistMono = Geist_Mono({
 	variable: '--font-geist-mono',
 	subsets: ['latin'],
+	display: 'swap',
 })
 
 const jost = Jost({
 	variable: '--font-jost',
 	weight: ['400', '500', '700'],
 	subsets: ['latin'],
+	display: 'swap',
 })
 
 export const metadata = {

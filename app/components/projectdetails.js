@@ -9,6 +9,7 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 	const [lightboxOpen, setLightboxOpen] = useState(false)
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [allImagesLoaded, setAllImagesLoaded] = useState(false)
+	const [loadedCount, setLoadedCount] = useState(0)
 	const thumbRefs = useRef([])
 	const containerRef = useRef(null)
 
@@ -21,17 +22,28 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 			return
 		}
 
-		const onLoad = () => {
-			loaded++
-			if (loaded === images.length) {
-				setTimeout(() => setAllImagesLoaded(true), 300)
-			}
-		}
+		const imagePromises = images.map((src) => {
+			return new Promise((resolve) => {
+				const img = new window.Image()
 
-		images.forEach((src) => {
-			const img = new window.Image()
-			img.src = src
-			img.onload = img.onerror = onLoad
+				img.onload = () => {
+					loaded++
+					setLoadedCount(loaded)
+					resolve()
+				}
+
+				img.onerror = () => {
+					loaded++
+					setLoadedCount(loaded)
+					resolve()
+				}
+
+				img.src = src
+			})
+		})
+
+		Promise.all(imagePromises).then(() => {
+			setTimeout(() => setAllImagesLoaded(true), 300)
 		})
 	}, [hero, gallery])
 
@@ -79,6 +91,10 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 	}, [currentIndex, lightboxOpen])
 
 	if (!allImagesLoaded) {
+		const totalImages = [hero, ...gallery].filter(Boolean).length
+		const progress =
+			totalImages > 0 ? Math.round((loadedCount / totalImages) * 100) : 0
+
 		return (
 			<div className='min-h-screen bg-background flex items-center justify-center py-20 px-4'>
 				<div className='text-center'>
@@ -91,8 +107,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 					<p className='mt-6 text-lg text-muted-foreground font-medium'>
 						Loading images...
 					</p>
-					<p className='mt-2 text-sm text-muted-foreground/70'>
-						Please wait a moment
+					<p className='mt-2 text-sm text-muted-foreground'>
+						{progress}% ({loadedCount}/{totalImages})
 					</p>
 				</div>
 			</div>
@@ -182,7 +198,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 								alt=''
 								fill
 								className='max-w-full max-h-full object-contain rounded-lg shadow-2xl'
-								priority
+								loading='eager'
+								unoptimized
 								sizes='100vw'
 								onClick={(e) => e.stopPropagation()}
 							/>
@@ -231,7 +248,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 						alt={title}
 						fill
 						className='object-cover'
-						priority
+						loading='eager'
+						unoptimized
 					/>
 					<div className='absolute inset-0 bg-black/20' />
 
@@ -258,7 +276,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 									fill
 									className='object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform'
 									sizes='(max-width: 768px) 100vw, 50vw'
-									priority
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300' />
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
@@ -290,6 +309,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 									fill
 									className='object-cover transition-transform duration-700 group-hover:scale-110'
 									sizes='(max-width: 768px) 100vw, 50vw'
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500' />
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -321,6 +342,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 									fill
 									className='object-cover transition-transform duration-700 group-hover:scale-110'
 									sizes='(max-width: 768px) 100vw, 25vw'
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500' />
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -352,6 +375,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 									fill
 									className='object-cover transition-transform duration-700 group-hover:scale-110'
 									sizes='(max-width: 768px) 100vw, 25vw'
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500' />
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -383,6 +408,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 									fill
 									className='object-cover transition-transform duration-700 group-hover:scale-110'
 									sizes='(max-width: 768px) 100vw, 50vw'
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500' />
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -414,6 +441,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 									fill
 									className='object-cover transition-transform duration-700 group-hover:scale-110'
 									sizes='(max-width: 768px) 100vw, 50vw'
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500' />
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -453,6 +482,8 @@ export default function ProjectDetail({title, hero, gallery = []}) {
 											fill
 											className='object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform'
 											sizes='(max-width: 768px) 100vw, 33vw'
+											loading='eager'
+											unoptimized
 										/>
 										<div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300' />
 										<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200'>

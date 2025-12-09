@@ -2,6 +2,7 @@
 
 import {useState, useEffect} from 'react'
 import {usePathname} from 'next/navigation'
+import Image from 'next/image'
 
 export default function Navbar() {
 	const pathname = usePathname()
@@ -52,10 +53,13 @@ export default function Navbar() {
 					<a
 						href='/'
 						className='flex items-center'>
-						<img
-							src={isDark ? '/logo2.png' : '/blacklogo.png'}
+						<Image
+							src={isDark ? '/darkmode_logo.jpg' : '/lightmode_logo.png'}
 							alt='Front Ridge Logo'
-							className='h-50 w-auto transition-opacity duration-300'
+							width={150}
+							height={50}
+							priority
+							className='h-auto w-auto transition-opacity duration-300'
 						/>
 					</a>
 

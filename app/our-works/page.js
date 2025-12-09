@@ -25,7 +25,7 @@ const WORKS = [
 		title: 'Shelbys',
 		category: 'Restaurants',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763624657/works/title/nv1vmfnuzwocwsa0xtxg.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1763969050/70S_5933_copy_yysuzs.jpg',
 		folder: 'shelbys',
 	},
 	{
@@ -39,7 +39,7 @@ const WORKS = [
 		title: 'Greenbook Dentistry',
 		category: 'Healthcare',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763622058/works/title/g4waoqwfsfgayqhmdeia.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1763969062/70S_4879-min_bgidnb.jpg',
 		folder: 'greenbook-dentistry',
 	},
 	{
@@ -118,6 +118,7 @@ function OurWorksContent() {
 	const [activeTab, setActiveTab] = useState('All')
 	const [imagesLoaded, setImagesLoaded] = useState(false)
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+	const [loadedCount, setLoadedCount] = useState(0)
 
 	const filtered =
 		activeTab === 'All' ? WORKS : WORKS.filter((w) => w.category === activeTab)
@@ -132,11 +133,40 @@ function OurWorksContent() {
 	}, [categoryFromUrl])
 
 	useEffect(() => {
-		const timer = setTimeout(() => setImagesLoaded(true), 400)
-		return () => clearTimeout(timer)
+		// Preload all images with proper caching
+		let loadedImages = 0
+		const totalImages = WORKS.length
+
+		const imagePromises = WORKS.map((work) => {
+			return new Promise((resolve) => {
+				const img = new window.Image()
+
+				img.onload = () => {
+					loadedImages++
+					setLoadedCount(loadedImages)
+					resolve()
+				}
+
+				img.onerror = () => {
+					loadedImages++
+					setLoadedCount(loadedImages)
+					resolve() // Resolve even on error to prevent blocking
+				}
+
+				// Use the same URL that Next.js will use
+				img.src = work.image
+			})
+		})
+
+		Promise.all(imagePromises).then(() => {
+			// Add a small delay after all images are loaded for smooth transition
+			setTimeout(() => setImagesLoaded(true), 300)
+		})
 	}, [])
 
 	if (!imagesLoaded) {
+		const progress = Math.round((loadedCount / WORKS.length) * 100)
+
 		return (
 			<div className='min-h-screen bg-background flex items-center justify-center py-20 px-4'>
 				<div className='text-center'>
@@ -148,6 +178,9 @@ function OurWorksContent() {
 					</div>
 					<p className='mt-6 text-lg text-muted-foreground font-medium'>
 						Loading our works...
+					</p>
+					<p className='mt-2 text-sm text-muted-foreground'>
+						{progress}% ({loadedCount}/{WORKS.length})
 					</p>
 				</div>
 			</div>
@@ -285,7 +318,8 @@ function OurWorksContent() {
 									fill
 									className='object-cover transition-transform duration-500 group-hover:scale-110'
 									sizes='(max-width: 768px) 100vw, 50vw'
-									priority
+									loading='eager'
+									unoptimized
 								/>
 								<div className='absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent' />
 							</div>

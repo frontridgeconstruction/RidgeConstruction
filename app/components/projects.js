@@ -13,7 +13,7 @@ const WORKS = [
 		description:
 			'A modern restaurant featuring contemporary design and ambiance.',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763632146/works/title/uzbg57hamqbjrsizgquv.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1763968932/70S_4591-HDR-2-Edit_slnsyr.jpg',
 		folder: 'secret-kitchen',
 	},
 	{
@@ -23,7 +23,7 @@ const WORKS = [
 		description:
 			'An elegant dining establishment with sophisticated interiors.',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763624657/works/title/nv1vmfnuzwocwsa0xtxg.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1763969050/70S_5933_copy_yysuzs.jpg',
 		folder: 'shelbys',
 	},
 	{
@@ -32,7 +32,7 @@ const WORKS = [
 		category: 'Healthcare',
 		description: 'A state-of-the-art dental clinic with modern facilities.',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763622599/works/title/ys6dc8hlj68y1c7e1wsz.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1763969053/70S_5244_copy-min_blbh5c.jpg',
 		folder: 'mabelle-dental',
 	},
 	{
@@ -41,7 +41,7 @@ const WORKS = [
 		category: 'Healthcare',
 		description: 'A contemporary dental practice designed for patient comfort.',
 		image:
-			'https://res.cloudinary.com/duor8d5e3/image/upload/w_1200,q_auto,f_auto,c_fill/v1763622058/works/title/g4waoqwfsfgayqhmdeia.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1500,q_auto,f_auto,c_fill/v1763969062/70S_4879-min_bgidnb.jpg',
 		folder: 'greenbook-dentistry',
 	},
 ]

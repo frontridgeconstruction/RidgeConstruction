@@ -8,14 +8,31 @@ export default function Footer() {
 	const [isDark, setIsDark] = useState(false)
 
 	useEffect(() => {
+		// Check initial theme
 		const savedTheme = localStorage.getItem('theme')
 		if (savedTheme === 'dark') {
 			setIsDark(true)
-			document.documentElement.classList.add('dark')
 		} else {
 			setIsDark(false)
-			document.documentElement.classList.remove('dark')
 		}
+
+		// Listen for theme changes
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName === 'class') {
+					const hasDarkClass =
+						document.documentElement.classList.contains('dark')
+					setIsDark(hasDarkClass)
+				}
+			})
+		})
+
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class'],
+		})
+
+		return () => observer.disconnect()
 	}, [])
 
 	const currentYear = new Date().getFullYear()
@@ -36,18 +53,18 @@ export default function Footer() {
 				<div className='max-w-7xl mx-auto'>
 					<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12 lg:mb-16'>
 						<div className='animate-fade-in-up'>
-							<Link
+							<a
 								href='/'
 								className='flex items-center mb-4 sm:mb-6'>
 								<Image
-									src={isDark ? '/logo2.png' : '/blacklogo.png'}
+									src={isDark ? '/darkmode_logo.jpg' : '/lightmode_logo.png'}
 									alt='Front Ridge Logo'
-									width={140}
-									height={140}
-									className='rounded-md sm:w-40 sm:h-40 transition-opacity duration-300'
+									width={150}
+									height={50}
+									className='h-auto w-auto transition-opacity duration-300'
 								/>
-							</Link>
-							<p className='text-gray-400 text-sm leading-relaxed -mt-10 sm:-mt-16'>
+							</a>
+							<p className='text-gray-400 text-sm leading-relaxed mt-4'>
 								Building excellence through quality construction and
 								professional expertise.
 							</p>

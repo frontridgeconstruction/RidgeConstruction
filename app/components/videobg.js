@@ -7,27 +7,43 @@ const projects = [
 	{
 		name: 'SECRET KITCHEN',
 		type: 'Restaurant',
-		images: ['/projects/sk1.jpeg', '/projects/sk2.jpeg', '/projects/sk3.jpg'],
+		images: [
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273398/sk1_rnu2hk.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273398/sk2_z83gp9.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273399/sk3_xdy0tm.jpg',
+		],
 	},
 	{
 		name: 'GREENBOOK DENTISTRY',
 		type: 'Healthcare',
-		images: ['/projects/gd1.jpeg', '/projects/gd2.jpeg'],
+		images: [
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273397/gd1_yfyy3m.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273396/gd2_fgcyvo.jpg',
+		],
 	},
 	{
 		name: 'MABELLE DENTAL',
 		type: 'Healthcare',
-		images: ['/projects/mv1.jpeg', '/projects/mv2.jpeg'],
+		images: [
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273396/mv1_fpaut2.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273398/mv2_ikhuof.jpg',
+		],
 	},
 	{
 		name: 'SHELBYS',
 		type: 'Restaurant',
-		images: ['/projects/sh1.jpeg', '/projects/sh2.jpeg'],
+		images: [
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273397/sh1_up6rvy.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273397/sh2_dbpob2.jpg',
+		],
 	},
 	{
 		name: 'BURGER KING',
 		type: 'Restaurant',
-		images: ['/projects/bk1.jpeg', '/projects/bk2.jpeg'],
+		images: [
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273399/bk1_xcrpv1.jpg',
+			'https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_65,f_auto/v1765273398/bk2_ykxgtt.jpg',
+		],
 	},
 ]
 

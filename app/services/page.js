@@ -160,7 +160,7 @@ export default function ServicesPage() {
 				'Ventilation and HVAC systems',
 			],
 			image:
-				'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
+				'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&q=80',
 		},
 		{
 			icon: HammerIcon,
@@ -176,7 +176,7 @@ export default function ServicesPage() {
 				'Advanced HVAC and filtration',
 			],
 			image:
-				'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
+				'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80',
 		},
 		{
 			icon: WrenchIcon,
@@ -192,7 +192,7 @@ export default function ServicesPage() {
 				'Minimal business disruption',
 			],
 			image:
-				'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+				'https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80',
 		},
 
 		{
@@ -209,7 +209,7 @@ export default function ServicesPage() {
 				'Fast-track construction',
 			],
 			image:
-				'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+				'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80',
 		},
 		{
 			icon: Wrench,
@@ -225,7 +225,7 @@ export default function ServicesPage() {
 				'Energy efficiency upgrades',
 			],
 			image:
-				'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80',
+				'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=500&q=80',
 		},
 		{
 			icon: PenTool,
@@ -241,7 +241,7 @@ export default function ServicesPage() {
 				'Value engineering',
 			],
 			image:
-				'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+				'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80',
 		},
 		{
 			icon: Ruler,
@@ -273,7 +273,7 @@ export default function ServicesPage() {
 				'Regular progress reporting',
 			],
 			image:
-				'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+				'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80',
 		},
 		{
 			icon: Building2,
@@ -289,7 +289,7 @@ export default function ServicesPage() {
 				'Sustainable building practices',
 			],
 			image:
-				'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+				'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80',
 		},
 	]
 

@@ -408,7 +408,7 @@ section.relative.min-h-screen p {
 }
 
 /* Ensure active nav link uses accent color */
-nav a[aria-current="page"] {
+nav a[aria-current='page'] {
 	color: var(--accent) !important;
 	font-weight: 700;
 }
@@ -448,7 +448,10 @@ nav a[aria-current="page"] {
 	color: #ffffff !important;
 	fill: #ffffff !important;
 	stroke: #ffffff !important;
-	transition: color 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+	transition:
+		color 0.3s ease,
+		fill 0.3s ease,
+		stroke 0.3s ease;
 }
 
 .phone-btn:hover,

@@ -146,7 +146,7 @@ export default function ServicesSection() {
 				'Ventilation and HVAC systems',
 			],
 			image:
-				'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
+				'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80',
 		},
 		{
 			icon: HammerIcon,
@@ -162,7 +162,7 @@ export default function ServicesSection() {
 				'Advanced HVAC and filtration',
 			],
 			image:
-				'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
+				'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=80',
 		},
 		{
 			icon: WrenchIcon,
@@ -178,7 +178,7 @@ export default function ServicesSection() {
 				'Minimal business disruption',
 			],
 			image:
-				'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+				'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80',
 		},
 	]
 

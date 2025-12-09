@@ -10,14 +10,14 @@ const container = {
 	show: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.15,
-			delayChildren: 0.3,
+			staggerChildren: 0.1,
+			delayChildren: 0.1,
 		},
 	},
 }
 const item = {
-	hidden: {opacity: 0, y: 30},
-	show: {opacity: 1, y: 0, transition: {duration: 0.7, ease: 'easeOut'}},
+	hidden: {opacity: 0, y: 20},
+	show: {opacity: 1, y: 0, transition: {duration: 0.5, ease: 'easeOut'}},
 }
 
 export default function ConstructionHero() {
@@ -44,20 +44,22 @@ export default function ConstructionHero() {
 			<motion.div
 				initial={{opacity: 0}}
 				animate={{opacity: 1}}
-				transition={{duration: 1.2}}
+				transition={{duration: 0.6}}
 				className='absolute inset-0 z-10 bg-linear-to-b from-black/90 via-black/70 to-black/95'
 			/>
 
 			<motion.div
-				initial={{scale: 1.1}}
+				initial={{scale: 1.05}}
 				animate={{scale: 1}}
-				transition={{duration: 1.8, ease: 'easeOut'}}
+				transition={{duration: 1.2, ease: 'easeOut'}}
 				className='absolute inset-0'>
 				<Image
-					src='https://res.cloudinary.com/diga1onyl/image/upload/v1763968918/bg_yzmhdh.jpg'
+					src='https://res.cloudinary.com/diga1onyl/image/upload/w_1920,q_75,f_auto,c_fill/v1763968918/bg_yzmhdh.jpg'
 					alt='Construction site at golden hour'
 					fill
 					priority
+					sizes='100vw'
+					quality={75}
 					className='object-cover brightness-[0.6]'
 				/>
 			</motion.div>
